@@ -17,9 +17,9 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->delete();
  
         $users = array(
-            ['name' => 'navi', 'email' => 'navi@weavebytes.com', 'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'john', 'email' => 'john@weavebytes.com', 'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['name' => 'tom',  'email' => 'tom@weavebytes.com',  'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 1, 'name' => 'navi', 'email' => 'navi@weavebytes.com', 'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 2, 'name' => 'john', 'email' => 'john@weavebytes.com', 'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            ['id' => 3, 'name' => 'tom',  'email' => 'tom@weavebytes.com',  'password' => bcrypt('1234'), 'created_at' => new DateTime, 'updated_at' => new DateTime],
         );
  
         // Uncomment the below to run the seeder
