@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'CompanyController@index'); 
+
+Route::model('company', 'Company'); 
+
+Route::resource('company', 'CompanyController');
