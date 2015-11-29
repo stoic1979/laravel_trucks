@@ -8,6 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Company;
+use App\User;
+
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -18,7 +21,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        $companies = Company::all();
+        $user = Auth::User();
+        $companies = User::with('company')->find($user->id)->company;        
         return view('company.index', compact('companies'));
     }
 
