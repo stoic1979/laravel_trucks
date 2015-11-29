@@ -14,6 +14,12 @@
                 <div class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('company.index') }}">Companies</a></li>
+                
+                    @if (Auth::check())
+                    <li><a href="/auth/logout/">Logout</a></li>
+                
+                    @endif
+
                 </div>
             </div>
         </nav>
