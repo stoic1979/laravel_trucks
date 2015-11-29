@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'CompanyController@index'); 
+Route::get('/', [
+    'middleware' => 'auth',
+    'uses' => 'CompanyController@index'
+]); 
 
 Route::model('company', 'Company'); 
 
