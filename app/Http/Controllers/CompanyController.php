@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Company;
+
 class CompanyController extends Controller
 {
     /**
@@ -16,7 +18,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        return view('master');
+        $companies = Company::all();
+        return view('company.index', compact('companies'));
     }
 
     /**
