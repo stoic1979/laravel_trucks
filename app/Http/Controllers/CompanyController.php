@@ -11,9 +11,21 @@ use App\Company;
 use App\User;
 
 use Auth;
+use Input;
+use Redirect;
+use Log;
+use Session;
 
 class CompanyController extends Controller
 {
+
+    protected $rules = [        
+            'title'         => ['required', 'min:3'],
+            'email'         => ['required'],
+            'mobile_number' => ['required'],
+    ];
+
+
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +45,7 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        //
+        return view('company.create');
     }
 
     /**
@@ -44,7 +56,12 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, $this->rules); 
+        $input = Input::all();
+        $input['user_id'] = Auth::User()->id;
+        Company::create( $input );
+ 
+        return Redirect::route('company.index')->with('Company created.');
     }
 
     /**
