@@ -1,7 +1,7 @@
 @extends('master')
  
 @section('content')
-    <h2>Companies, count: {{ $companies->count() }} </h2>
+    <h3>My Companies</h3>
 
     @if(Session::has('flash_message'))
     <div class="alert alert-success">
@@ -13,7 +13,9 @@
     @if ( !$companies->count() )
         You have no company
     @else
-        <table border="1" width="100%">
+        <table class="table" border="0" width="100%">
+            <tr class="info"><td>Company Name</td><td>Edit</td><td>Delete</td>
+            </tr>
             @foreach( $companies as $company )
                 <tr>
 
@@ -48,7 +50,7 @@
     @endif
  
     <p>
-        {!! link_to_route('company.create', 'Create Company') !!}
+        {!! link_to_route('company.create', 'Create Company', '', array('class' => 'btn btn-info')) !!}
     </p>
 @endsection
  
