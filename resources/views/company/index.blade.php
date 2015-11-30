@@ -17,10 +17,10 @@
                 <tr>
                     {!! Form::open(array('class' => 'form-inline', 
                     'method' => 'DELETE', 
-                    'route' => array('company.destroy', $company->slug))) !!}
-                        <td><a href="{{ route('company.show', $company->slug) }}">{{ $company->title }}</a></td>
+                    'route' => array('company.destroy', $company->id))) !!}
+                        <td><a href="{{ route('company.show', $company->id) }}">{{ $company->title }}</a></td>
                         
-                        <td>{!! link_to_route('company.edit', 'Edit', array($company->slug), array('class' => 'btn btn-info')) !!}</td>
+                        <td>{!! link_to_route('company.edit', 'Edit', array($company), array('class' => 'btn btn-info')) !!}</td>
                         <td>{!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}</td>
                         
                     {!! Form::close() !!}

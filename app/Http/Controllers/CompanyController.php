@@ -70,7 +70,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company)
     {
         //
     }
@@ -78,12 +78,12 @@ class CompanyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Company $company
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company)
     {
-        //
+        return view('company.edit', compact('company'));
     }
 
     /**
@@ -93,9 +93,14 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Company $company)
     {
-        //
+        $input = array_except(Input::all(), '_method');
+        $company->update($input);
+
+        Session::flash('flash_message', 'Company updated successfully!');
+ 
+        return Redirect::route('company.index')->with('message', 'Company updated');
     }
 
     /**
@@ -104,7 +109,7 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Company $company)
     {
         //
     }
