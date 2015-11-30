@@ -15,7 +15,7 @@
                 <div class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('company.index') }}">Companies</a></li>
-                    <li><a href="#">Customers</a></li>
+                    <li><a href="{{ route('customer.index') }}">Customers</a></li>
                     <li><a href="#">Drivers</a></li>
                     <li><a href="#">Trucks</a></li>
                     <li><a href="#">Trailers</a></li>
