@@ -1,8 +1,8 @@
 
-<div style="width:400px;">
+<div style="width:450px; ">
 <div class="form-group">
     {!! Form::label('title', 'Title:') !!}
-    {!! Form::text('title') !!}
+    {!! Form::text('title', '', array('class' => 'form-control')) !!}
 </div>
 
 
@@ -23,27 +23,27 @@
 
 <div class="form-group">
     {!! Form::label('registered_on', 'Registered On:') !!} (YYYY-MM-DD)
-    {!! Form::text('registered_on') !!}
+    {!! Form::text('registered_on', '', array('class' => 'form-control')) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('address', 'Address:') !!}
-    {!! Form::text('address') !!}
+    {!! Form::text('address', '', array('class' => 'form-control')) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('state', 'State:') !!}
-    {!! Form::text('state') !!}
+    {!! Form::text('state', '', array('class' => 'form-control')) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('country', 'Country:') !!}
-    {!! Form::text('country') !!}
+    {!! Form::text('country', '', array('class' => 'form-control')) !!}
 </div>
 
 <div class="form-group">
     {!! Form::label('description', 'Description:') !!}
-    {!! Form::text('description') !!}
+    {!! Form::textarea('description', '', array('class' => 'form-control')) !!}
 </div>
 
 <div class="form-group">
