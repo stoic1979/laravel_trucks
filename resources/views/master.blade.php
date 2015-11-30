@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>Laravel</title>
-        <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+        <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::asset('bootstrap-3.3.6-dist/js/bootstrap.js') }}"></script>
+        <link rel="stylesheet" href="{{ URL::asset('bootstrap-3.3.6-dist/css/bootstrap.css') }}">
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -36,5 +38,6 @@
                 @show
             </div>
         </div>
+        @include('company.deleteconfirm')
     </body>
 </html>

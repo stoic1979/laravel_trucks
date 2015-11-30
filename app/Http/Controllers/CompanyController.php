@@ -111,6 +111,10 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+
+        Session::flash('flash_message', 'Company deleted successfully!');
+
+        return Redirect::route('company.index')->with('message', 'Company deleted.');
     }
 }
