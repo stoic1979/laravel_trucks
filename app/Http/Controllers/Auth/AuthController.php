@@ -72,4 +72,21 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Show the application registration form.
+     * Since we have a common page for both login/register,
+     * We will show login page view
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getRegister()
+    {
+        return view('auth.login', array('type' => 'register'));
+    }
+
+    public function getLogin()
+    {
+        return view('auth.login', array('type' => 'login'));
+    }
 }

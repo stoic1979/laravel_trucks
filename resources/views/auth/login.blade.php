@@ -8,8 +8,23 @@
         
         <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('js/auth.js') }}"></script>
+        <script>
+        function updateView() {
+            @if($type == "login") 
+                $("#login-form").delay(100).fadeIn(100);
+                $("#register-form").fadeOut(100);
+                $('#register-form-link').removeClass('active');
+                $(this).addClass('active');
+            @else
+                $("#register-form").delay(100).fadeIn(100);
+                $("#login-form").fadeOut(100);
+                $('#login-form-link').removeClass('active');
+                $(this).addClass('active');
+            @endif
+        }
+        </script>
     </head>
-    <body>
+    <body onload="updateView()">
 
 @if($errors->any())
     <div class="alert alert-danger">
