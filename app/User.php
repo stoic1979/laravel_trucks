@@ -46,4 +46,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Customer');
     }
+
+    public function driver()
+    {
+        return $this->hasMany('App\Driver');
+    }
 }
