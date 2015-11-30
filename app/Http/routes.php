@@ -18,9 +18,13 @@ Route::get('/', [
 
 Route::model('company', 'Company'); 
 
-Route::resource('company', 'CompanyController');
-
 Route::controllers([
-    'auth' => 'Auth\AuthController',
+    'auth'     => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
 ]);
+
+Route::bind('company', function($value, $route) {
+	return App\Company::whereId($value)->first();
+});
+
+Route::resource('company', 'CompanyController');
