@@ -19,6 +19,8 @@ Route::get('/', [
 Route::model('company',  'Company'); 
 Route::model('customer', 'Customer'); 
 Route::model('driver',   'Driver'); 
+Route::model('truck',    'Truck'); 
+
 
 Route::controllers([
     'auth'     => 'Auth\AuthController',
@@ -37,6 +39,11 @@ Route::bind('driver', function($value, $route) {
 	return App\Driver::whereId($value)->first();
 });
 
+Route::bind('truck', function($value, $route) {
+	return App\Truck::whereId($value)->first();
+});
+
 Route::resource('company',  'CompanyController');
 Route::resource('customer', 'CustomerController');
 Route::resource('driver',   'DriverController');
+Route::resource('truck',    'TruckController');

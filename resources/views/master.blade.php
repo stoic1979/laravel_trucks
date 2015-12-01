@@ -27,7 +27,7 @@
                     <li><a href="{{ route('company.index') }}">Companies</a></li>
                     <li><a href="{{ route('customer.index') }}">Customers</a></li>
                     <li><a href="{{ route('driver.index') }}">Drivers</a></li>
-                    <li><a href="#">Trucks</a></li>
+                    <li><a href="{{ route('truck.index') }}">Trucks</a></li>
                     <li><a href="#">Trailers</a></li>
                     <li><a href="#">Transactions</a></li>
                     <li><a href="#">Uploads</a></li>

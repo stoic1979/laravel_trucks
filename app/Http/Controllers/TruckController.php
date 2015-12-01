@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
+use App\Truck;
+use App\User;
+
+use Auth;
+use Input;
+use Redirect;
+use Log;
+use Session;
+
 class TruckController extends Controller
 {
     /**
@@ -16,7 +26,9 @@ class TruckController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::User();
+        $trucks = User::with('truck')->find($user->id)->truck;        
+        return view('truck.index', compact('trucks'));
     }
 
     /**
