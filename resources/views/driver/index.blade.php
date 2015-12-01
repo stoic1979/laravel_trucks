@@ -7,7 +7,7 @@
         You have no driver
     @else
         <table class="table" border="0" width="100%">
-            <tr class="info"><td>Driver Name</td><td>Firm Name</td><td>Edit</td><td>Delete</td>
+            <tr class="info"><td>Driver Name</td><td>Social Security No.</td><td>Edit</td><td>Delete</td>
             </tr>
             @foreach( $drivers as $driver )
                 <tr>
@@ -20,7 +20,7 @@
                             'route' => array('driver.destroy', $driver->id))) 
                     !!}
                         <td><a href="{{ route('driver.show', $driver->id) }}">{{ $driver->name }}</a></td>
-                        <td>{{ $driver->firm_name }}</td>
+                        <td>{{ $driver->social_security_no }}</td>
                         
                         <td>{!! link_to_route('driver.edit', 'Edit', array($driver), array('class' => 'btn btn-info')) !!}</td>
                         <td>
