@@ -51,4 +51,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Driver');
     }
+
+     public function truck()
+    {
+        return $this->hasMany('App\Truck');
+    }
 }
