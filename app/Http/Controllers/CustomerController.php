@@ -48,7 +48,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$this->validate($request, $this->rules); 
+        $input = Input::all();
+        $input['user_id'] = Auth::User()->id;
+        Customer::create( $input );
+
+        Session::flash('flash_message', 'Customer created successfully!');
+ 
+        return Redirect::route('customer.index')->with('Customer created.');
     }
 
     /**
