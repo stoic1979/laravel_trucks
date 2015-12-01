@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call('UsersTableSeeder');
         $this->call('CompanyTableSeeder');
         $this->call('CustomersTableSeeder');
+        $this->call('DriversTableSeeder');
 
         Model::reguard();
     }
