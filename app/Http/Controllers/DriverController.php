@@ -37,7 +37,7 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        return view('driver.create');
     }
 
     /**
@@ -48,7 +48,14 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         //$this->validate($request, $this->rules); 
+        $input = Input::all();
+        $input['user_id'] = Auth::User()->id;
+        Driver::create( $input );
+
+        Session::flash('flash_message', 'Driver created successfully!');
+ 
+        return Redirect::route('driver.index')->with('Driver created.');
     }
 
     /**
