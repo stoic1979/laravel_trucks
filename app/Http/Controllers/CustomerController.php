@@ -77,7 +77,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        return view('customer.edit', compact('customer'));
     }
 
     /**
@@ -89,7 +89,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $input = array_except(Input::all(), '_method');
+        $customer->update($input);
+
+        Session::flash('flash_message', 'Customer updated successfully!');
+ 
+        return Redirect::route('customer.index')->with('message', 'Customer updated');
     }
 
     /**
