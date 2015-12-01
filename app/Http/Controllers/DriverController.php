@@ -77,7 +77,7 @@ class DriverController extends Controller
      */
     public function edit(Driver $driver)
     {
-        //
+        return view('driver.edit', compact('driver'));
     }
 
     /**
@@ -89,7 +89,12 @@ class DriverController extends Controller
      */
     public function update(Request $request, Driver $driver)
     {
-        //
+        $input = array_except(Input::all(), '_method');
+        $driver->update($input);
+
+        Session::flash('flash_message', 'Driver updated successfully!');
+ 
+        return Redirect::route('driver.index')->with('message', 'Driver updated');
     }
 
     /**
