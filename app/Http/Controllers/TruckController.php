@@ -55,10 +55,10 @@ class TruckController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Truck $truck
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Truck $truck)
     {
         //
     }
@@ -66,10 +66,10 @@ class TruckController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Truck $truck
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Truck $truck)
     {
         //
     }
@@ -78,10 +78,10 @@ class TruckController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Truck $truck
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Truck $truck)
     {
         //
     }
@@ -89,11 +89,15 @@ class TruckController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Truck $truck
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Truck $truck)
     {
-        //
+        $truck->delete();
+
+        Session::flash('flash_message', 'Truck deleted successfully!');
+
+        return Redirect::route('truck.index')->with('message', 'Truck deleted.');
     }
 }
