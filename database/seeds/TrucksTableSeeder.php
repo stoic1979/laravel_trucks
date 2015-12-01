@@ -18,6 +18,7 @@ class TrucksTableSeeder extends Seeder
             'id'            => 1, 
             'user_id'       => 1,
             'make'          => 'Nissan', 
+            'yr_model'      => 2003,
             'created_at'    => new DateTime, 
             'updated_at'    => new DateTime
             ],
@@ -25,6 +26,7 @@ class TrucksTableSeeder extends Seeder
             'id'            => 2,
             'user_id'       => 1, 
             'name'          => 'Mahindra',  
+            'yr_model'      => 2007,
             'created_at'    => new DateTime, 
             'updated_at'    => new DateTime
             ]
