@@ -5,8 +5,18 @@
         <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ URL::asset('bootstrap-3.3.6-dist/js/bootstrap.js') }}"></script>
         <link rel="stylesheet" href="{{ URL::asset('bootstrap-3.3.6-dist/css/bootstrap.css') }}">
+        <script>
+        function pageLoaded() {
+            @if(Session::has('flash_message'))
+                var notify = $('#notificationModal');
+                notify.find('.modal-body p').text("{{ Session::get('flash_message') }}");
+                notify.modal('show');                  
+            @endif           
+        }
+
+        </script>
     </head>
-    <body>
+    <body onLoad="pageLoaded()">
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -43,6 +53,7 @@
                 @show
             </div>
         </div>
-        @include('company.deleteconfirm')
+        @include('popups.deleteconfirm')
+        @include('popups.notification')
     </body>
 </html>
